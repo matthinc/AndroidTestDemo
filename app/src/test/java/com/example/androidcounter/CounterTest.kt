@@ -32,5 +32,4 @@ class CounterTest {
         Assert.assertEquals(0, counter.counterValue)
     }
 
-
 }

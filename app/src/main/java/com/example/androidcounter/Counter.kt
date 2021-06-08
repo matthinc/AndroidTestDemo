@@ -1,9 +1,6 @@
 package com.example.androidcounter
 
-import java.util.*
-
 class Counter(private var value: Int) {
-
     fun increment() {
         ++value
     }

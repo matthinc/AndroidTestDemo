@@ -15,7 +15,6 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 class UITest {
-
     @get:Rule
     val activityRule = ActivityScenarioRule(MainActivity::class.java)
 
@@ -38,5 +37,4 @@ class UITest {
         onView(withId(R.id.reset_button)).perform(click())
         onView(withId(R.id.counter_value)).check(matches(withText("0")))
     }
-
 }

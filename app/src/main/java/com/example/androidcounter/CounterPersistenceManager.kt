@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.SharedPreferences
 
 class CounterPersistenceManager(private val context: Context) {
-
     private val preferences: SharedPreferences by lazy {
         context.getSharedPreferences("counter", Context.MODE_PRIVATE)
     }
@@ -20,5 +19,4 @@ class CounterPersistenceManager(private val context: Context) {
     companion object {
         private const val COUNTER_KEY = "counter_value"
     }
-
 }

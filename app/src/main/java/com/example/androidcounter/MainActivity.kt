@@ -7,14 +7,8 @@ import android.widget.TextView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
-    private val counterPersistenceManager by lazy {
-        CounterPersistenceManager(this)
-    }
-
-    private val counter by lazy {
-        counterPersistenceManager.loadCounter()
-    }
+    private val counterPersistenceManager by lazy { CounterPersistenceManager(this) }
+    private val counter by lazy { counterPersistenceManager.loadCounter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
