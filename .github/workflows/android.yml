@@ -31,10 +31,17 @@ jobs:
       steps:
         - uses: actions/checkout@v2
         - uses: reactivecircus/android-emulator-runner@v2
-          name: Run instrumented tests
+          name: Run tests with coverage
           with:
             api-level: 23
             target: default
             arch: x86
             profile: Nexus 6
-            script: ./gradlew connectedCheck --stacktrace
+            script: ./gradlew jacocoTestReport
+        - name: SonarCloud Scan
+          uses: sonarsource/sonarcloud-github-action@master
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          with:
+            args: >
+              -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
