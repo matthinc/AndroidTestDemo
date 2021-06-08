@@ -48,3 +48,5 @@ jobs:
           with:
             args: >
               -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
+              -Dsonar.organization=matthinc
+              -Dsonar.projectKey=android_test
