@@ -30,14 +30,14 @@ jobs:
       
       steps:
         - uses: actions/checkout@v2
-        - uses: reactivecircus/android-emulator-runner@v2
-          name: Run tests with coverage
-          with:
-            api-level: 23
-            target: default
-            arch: x86
-            profile: Nexus 6
-            script: ./gradlew jacocoTestReport
+#        - uses: reactivecircus/android-emulator-runner@v2
+#          name: Run tests with coverage
+#          with:
+#            api-level: 23
+#            target: default
+#            arch: x86
+#            profile: Nexus 6
+#            script: ./gradlew jacocoTestReport
         - name: Remove build.gradle
           run: rm build.gradle
         - name: SonarCloud Scan
@@ -51,3 +51,4 @@ jobs:
               -Dsonar.organization=matthinc
               -Dsonar.projectKey=android_test
               -Dsonar.sources=app/src/main/java
+              -Dsonar.host.url=https://ec.cs.hm.edu
