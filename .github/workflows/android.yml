@@ -48,6 +48,6 @@ jobs:
           with:
             args: >
               -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
-              -Dsonar.projectKey=testing_demo
+              -Dsonar.projectKey=testing_demo:main
               -Dsonar.sources=app/src/main/java
               -Dsonar.host.url=https://ec.cs.hm.edu
