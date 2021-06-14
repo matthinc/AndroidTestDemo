@@ -40,15 +40,9 @@ jobs:
             script: ./gradlew jacocoTestReport
         - name: Remove build.gradle
           run: rm build.gradle
-        - name: SonarCloud Scan
-          uses: sonarsource/sonarcloud-github-action@master
-          env:
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - uses: codecov/codecov-action@v1
           with:
-            args: >
-              -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
-              -Dsonar.projectKey=testing_demo:main
-              -Dsonar.sources=app/src/main/java
-              -Dsonar.host.url=https://ec.cs.hm.edu
-              -Dsonar.branch.name=main
+            token: ${{ secrets.CODECOV_TOKEN }}
+            files: app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
+            fail_ci_if_error: true
+            verbose: true
