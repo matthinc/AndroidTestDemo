@@ -51,3 +51,4 @@ jobs:
               -Dsonar.projectKey=testing_demo:main
               -Dsonar.sources=app/src/main/java
               -Dsonar.host.url=https://ec.cs.hm.edu
+              -Dsonar.branch.name=main
